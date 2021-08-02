@@ -1,5 +1,5 @@
 from common.menu import print_menu
-from modu.template.basic import plot_show, plot_two_list_show, scatter
+from modu.template.basic_plot import plot_show, plot_two_list_show, scatter
 from modu.template.changed_temperatures_on_my_birthday import ChangedTemperaturesOnMyBirthday
 
 if __name__ == '__main__':
