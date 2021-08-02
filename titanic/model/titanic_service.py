@@ -5,25 +5,26 @@ class TitanicService(object):
     dataset = Dataset()
 
     def new_model(self, payload) -> object:
-        this = self.dataset
-        this.context = '../titanic/data/'
-        this.fname = payload
-        print(this.context + this.fname)
-        return pd.read_csv(this.context + this.fname + '.csv', encoding='UTF-8')
+        # this = self.dataset
+        # this.context = '/data/'
+        # this.fname = 'payload'
+        # print(this.context + this.fname)
+        return pd.read_csv(f'../data/{payload}.csv')
 
-    def count_survived_dead(self) -> []:
-        return []
+    @staticmethod
+    def create_train(this: object) -> object:
+        return this.train.drop('Survived', axis=1)
 
-    # def create_train(this: object) -> {}:
-    #     return None
-
-
+    @staticmethod
     def create_label(this: object) -> {}:
-        return None
+        return this.train['Survived']
 
-
+    @staticmethod
     def drop_feature(this: object, *feature) -> object:
-        return this
+        for i in feature:
+                this.train = this.train.drop([i], axis=1)
+                this.test = this.test.drop([i], axis=1)
+        return None
 
 
     def embarked_nominal(this: object) -> object:
