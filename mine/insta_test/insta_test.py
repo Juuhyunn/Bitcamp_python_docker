@@ -12,7 +12,7 @@ class Insta(object):
     def insta_login(self):
         login_url = 'https://www.instagram.com/accounts/login/'
         user_id = 'ahnju96@gmail.com'
-        user_pw = 'alTmfk8316'
+        user_pw = '비밀번호 비밀'
         login_option = 'instagram'
         driver_path = 'chromedriver_win32/chromedriver.exe'
         driver = wd.Chrome(driver_path)
